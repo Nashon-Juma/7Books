@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\NewsletterController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['namespace' => 'App\Http\Controllers\Auth'], function () {
+Route::group(['namespace' => 'Auth'], function () {
     Route::group(['middleware' => ['auth']], function () {
         Route::get('logout', 'LogoutController@perform')->name('logout');
     });
@@ -25,6 +28,7 @@ Route::group(['namespace' => 'App\Http\Controllers\Auth'], function () {
         Route::get('login', 'LoginController@show')->name('login.show');
         Route::post('login', 'LoginController@login')->name('login');
     });
+    Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
 });
 
 Route::group(['namespace' => "App\Http\Controllers"], function () {
