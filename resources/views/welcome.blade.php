@@ -85,9 +85,9 @@
         <div class="swiper-slide">
           <a class="card svb-card svb-transition-fast hover-darkened hover-grow active-shrink"
             href="{{ route('books.show', $book->id) }}">
-            <img src="{{ $book->getFirstMediaUrl('cover_image') ?: Vite::asset('resources/images/hero.svg') }}" class="card-img-top" alt="{{ $book->title }}">
+            <img src="{{ $book->getFirstMediaUrl('cover_image') ?: Vite::asset('resources/images/hero.svg') }}" class="card-img-top" alt="{{ $book->name }}">
             <div class="title svb-transition-fast">
-              {{ $book->title }}
+              {{ $book->name }}
             </div>
           </a>
         </div>
@@ -163,9 +163,9 @@
         <div class="swiper-slide">
           <div class="card svb-card svb-transition-fast hover-darkened hover-grow active-shrink">
             <img src="{{ $book->getFirstMediaUrl('cover_image') ?: Vite::asset('resources/images/hero.svg') }}"
-              class="card-img-top" alt="{{ $book->title }}">
+              class="card-img-top" alt="{{ $book->name }}">
             <div class="title svb-transition-fast">
-              {{ $book->title }}
+              {{ $book->name }}
             </div>
           </div>
         </div>
