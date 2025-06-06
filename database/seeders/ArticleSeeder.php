@@ -20,8 +20,7 @@ class ArticleSeeder extends Seeder
                 'user_id' => rand(1, 20),  // Assuming users with IDs 1 to 3
                 'public' => 1,
             ]);
-
-            $article->addMediaFromUrl('https://via.placeholder.com/600x400')
+            $article->addMediaFromUrl('https://picsum.photos/600/400')
                 ->toMediaCollection('images');
         }
     }
