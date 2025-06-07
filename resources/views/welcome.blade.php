@@ -85,7 +85,7 @@
         <div class="swiper-slide">
           <a class="card svb-card svb-transition-fast hover-darkened hover-grow active-shrink"
             href="{{ route('books.show', $book->id) }}">
-            <img src="{{ $book->getFirstMediaUrl('cover_image') ?: Vite::asset('resources/images/hero.svg') }}" class="card-img-top" alt="{{ $book->name }}">
+            <img src="{{ $book->getPhotoAttribute() }}" class="card-img-top" alt="{{ $book->name }}">
             <div class="title svb-transition-fast">
               {{ $book->name }}
             </div>
@@ -124,7 +124,7 @@
         @foreach($popularAuthors as $author)
         <div class="swiper-slide">
           <div class="svb-profile svb-transition-fast hover-grow hover-darkened active-shrink"
-            style="background-image: url({{ $author->photo ?: Vite::asset('resources/images/default-avatar.png') }})">
+            style="background-image: url({{ $author->getPhotoAttribute() }})">
             <span class="overlay svb-transition-fast">
               {{ $author->name }}
             </span>

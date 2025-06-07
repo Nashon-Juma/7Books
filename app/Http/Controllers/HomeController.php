@@ -35,14 +35,19 @@ class HomeController extends Controller
                 ->orderBy('published_at', 'desc')
                 ->take(10)
                 ->get(),
-
-            'popularAuthors' => Author::withCount(['books'])
+            'popularAuthors' => Author::withCount(['books', 'media'])
                 ->orderBy('books_count', 'desc')
                 ->take(8)
                 ->get(),
 
             'popularGenres' => Genre::withCount('books')
                 ->orderBy('books_count', 'desc')
+                ->take(10)
+                ->get(),
+
+            // Add popular books with cover_image media
+            'popularBooks' => Book::with(['authors', 'media'])
+                ->orderBy('rate', 'desc')
                 ->take(10)
                 ->get(),
 

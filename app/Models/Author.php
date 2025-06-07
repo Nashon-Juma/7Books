@@ -58,6 +58,6 @@ class Author extends Model implements HasMedia
     
     public function getPhotoAttribute()
     {
-        return $this->getFirstMediaUrl('photos') ?: Vite::asset('resources/images/default-avatar.png');
+        return $this->getFirstMediaUrl('author_photo') ?: Vite::asset('resources/images/default-avatar.png');
     }
 }
